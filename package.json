@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "dotenv -e .env.dev -- nodemon --watch src --exec ts-node src/app.ts",
-    "test": "dotenv -e .env.dev -- jest",
-    "migrate-test": "dotenv -e .env.test -- prisma migrate dev",
-    "migrate": "dotenv -e .env.dev -- prisma migrate dev"
+    "test": "dotenv -e .env.test -- jest",
+    "seed": "dotenv -e .env.dev ts-node src/db/seed.ts",
+    "migrate-test": "dotenv -e .env.test -- npx prisma migrate dev",
+    "migrate": "dotenv -e .env.dev -- npx prisma migrate dev"
   },
   "author": "",
   "license": "ISC",
